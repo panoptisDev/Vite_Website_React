@@ -161,7 +161,7 @@ function Navbar({isOpen, setIsOpen} : NavbarProps) {
           isOpen ? "opacity-100 h-screen" : "opacity-0 invisible h-0"
         }  px-8 ${
           state.isDarkMode ? "bg-dark_primary " : "bg-white"
-        } transition-all duration-500 ease-in-out inset-x-0 z-20 fixed overflow-hidden `}
+        } transition-all duration-500 ease-in-out inset-x-0 z-40 fixed overflow-hidden `}
       >
         <div className="pt-6 pb-24 w-72 mx-auto">
           <ul
