@@ -20,13 +20,15 @@ function FeatureCard({ icon }: FeatureCardProps) {
           state.isDarkMode ? "bg-dark_primary" : " bg-dark_secondary/10"
         } w-12 h-12 mb-6  rounded-md flex items-center justify-center`}
       >
-        <motion.div
+        <motion.img
           
           initial={{ scale: 0.5, opacity: 0.3 }}
           whileInView={{ scale: 1, opacity: 1 }}
           // transition={{delay: 0.2}}
-          className={`w-6 h-6 ${icon} bg-cover bg-center duration-200 ease-out`}
-        ></motion.div>
+          className={`w-6 h-6 duration-200 ease-out`}
+          src={icon}
+          alt=''
+        ></motion.img>
       </div>
       <motion.h3
         className={`${
