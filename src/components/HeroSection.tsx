@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import logo from '../assets/icon/logo.svg'
+import logo from '../assets/icon/logo-with-shadow.png'
 import { DarkModeContext } from '../context/DarkmodeContext';
 import { motion } from "framer-motion";
 
@@ -11,7 +11,7 @@ function HeroSection() {
   return (
     <div className="flex flex-col lg:flex-row-reverse lg:w-10/12 justify-end items-center pt-16 lg:pt-36 pb-12">
       <motion.div initial={{opacity:0}} whileInView={{opacity:1}} className="mb-12 relative  lg:mb-0 flex justify-center lg:justify-center duration-700">
-        <img className="w-44 sm:w-48 lg:w-80" src="../assets/icon/logo-with-shadow.png" alt="vite logo" />
+        <img className="w-44 sm:w-48 lg:w-80" src={logo} alt="vite logo" />
         <div className=" -top-8 -right-8 lg:-top-14 lg:inset-x-auto absolute w-60 h-60 sm:w-64 sm:h-64 lg:w-96 lg:h-96 bg-gradient-to-br from-cyan-500 via-purple-500 to-pink-500 -z-20 rounded-full blur-3xl"></div>
       </motion.div>
       <div className="sm:w-4/5 sm:px-8 lg:w-fit lg:mr-32 lg:px-0 lg:text-left container flex flex-col items-center lg:items-start">
