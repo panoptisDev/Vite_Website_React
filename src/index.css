@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* #root {
+    margin: 0;
+    padding: 0;
+} */
+#root,
+#root::before,
+#root::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Center the whole the page */
+    max-width: 1536px;
+    margin: auto;
+}
+
+.nav_item {
+ @apply hover:text-sky-500 transition-all duration-200 px-4 py-7
+}
+
+
+/* remove all the tap highlight color in mobile device */
+@layer base {
+    html {
+        -webkit-tap-highlight-color: transparent;
+    }
+}
