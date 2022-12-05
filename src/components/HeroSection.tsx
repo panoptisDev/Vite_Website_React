@@ -11,8 +11,6 @@ function HeroSection() {
   return (
     <div className="flex flex-col lg:flex-row-reverse lg:w-10/12 justify-end items-center pt-16 lg:pt-36 pb-12">
       <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
         className="mb-12 relative max-lg:w-full lg:mb-0 flex justify-center lg:justify-center duration-700 z-10 "
       >
         <img className="w-44 sm:w-48 lg:w-80" src={logo} alt="vite logo" />
