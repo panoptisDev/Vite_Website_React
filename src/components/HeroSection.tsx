@@ -1,24 +1,31 @@
-import { useContext } from 'react';
+import { useContext, useRef } from 'react';
 import logo from '../assets/icon/logo-with-shadow.png'
 import { DarkModeContext } from '../context/DarkmodeContext';
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 function HeroSection() {
   const { state } = useContext(DarkModeContext);
 
+  // Use Framer Motion package to implement animation:
+  // when scrolling down, the logo opacity go to 0, go up will go to normal
+  let ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
+  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
   
 
   return (
-    <div className="flex flex-col lg:flex-row-reverse lg:w-10/12 justify-end items-center pt-16 lg:pt-36 pb-12">
-      <div
+    <div ref={ref} className="flex flex-col lg:flex-row-reverse lg:w-10/12 justify-end items-center pt-16 lg:pt-36 pb-12">
+      <motion.div
+        style={{opacity}}
         className="mb-12 relative max-lg:w-full lg:mb-0 flex justify-center lg:justify-center z-10 "
       >
-        <motion.img
-          initial={{ opacity: 0, scale: 0 }}
-          whileInView={{opacity: 1, scale: 1}}
+        <img
           className="w-44 sm:w-48 lg:w-80 duration-300 ease-in-out" src={logo} alt="vite logo" />
         <div className=" -top-8 right-auto lg:-top-14 lg:inset-x-auto absolute w-60 h-60 sm:w-64 sm:h-64 lg:w-96 lg:h-96 bg-gradient-to-br from-cyan-500 via-purple-500 to-pink-500 -z-10 rounded-full blur-3xl"></div>
-      </div>
+      </motion.div>
       <div className="sm:w-4/5 sm:px-8 lg:w-fit lg:mr-32 lg:px-0 lg:text-left container flex flex-col items-center lg:items-start">
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-cyan-500 to-purple-600 w-fit">
           Vite
