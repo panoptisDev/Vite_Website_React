@@ -20,7 +20,7 @@ function HeroSection() {
     <div ref={ref} className="flex flex-col lg:flex-row-reverse lg:w-10/12 justify-end items-center pt-16 lg:pt-36 pb-12">
       <motion.div
         style={{opacity}}
-        className="mb-12 relative max-lg:w-full lg:mb-0 flex justify-center lg:justify-center z-10 "
+        className="mb-12 relative max-lg:w-full lg:mb-0 flex justify-center lg:justify-center "
       >
         <img
           className="w-44 sm:w-48 lg:w-80 duration-300 ease-in-out" src={logo} alt="vite logo" />
